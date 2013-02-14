@@ -9,5 +9,12 @@
 #import "Card.h"
 
 @interface PlayingCard : Card
+@property (nonatomic)NSUInteger rank;
+@property (nonatomic,strong)NSString *suit;
 
++(NSArray *)ranks;
++(NSArray *)suits;
++(NSUInteger)maxRank;
+//convience initializer
+-(id)initWithRank:(NSUInteger)rank andSuit:(NSString *)suit;
 @end

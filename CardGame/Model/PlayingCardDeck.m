@@ -7,7 +7,18 @@
 //
 
 #import "PlayingCardDeck.h"
+#import "PlayingCard.h"
 
 @implementation PlayingCardDeck
+-(id)init{
+    if (self = [super init]) {
+        for (NSString *suit in [PlayingCard suits]) {
+            for (NSUInteger rank = 1; rank <= [PlayingCard maxRank]; rank++) {
+                [self addingcard:[[PlayingCard alloc]initWithRank:rank andSuit:suit] atTop:YES];
+            }
+        }
+    }
+    return self;
+}
 
 @end

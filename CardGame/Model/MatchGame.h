@@ -7,7 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Deck.h"
 
 @interface MatchGame : NSObject
+
+@property (nonatomic,readonly) NSInteger score;
+@property (nonatomic,readonly) NSUInteger flipCount;
+@property (nonatomic,strong,readonly)NSMutableArray *cards;
+@property (nonatomic,strong,readonly)NSMutableArray *resultHistory;
+
+-(id)initWithCardCount:(NSUInteger)count
+             usingDeck:(Deck *)deck;
+
+-(void)flipCardAtIndex:(NSUInteger)index;
+
+-(Card *)cardAtIndex:(NSUInteger)index;
 
 @end

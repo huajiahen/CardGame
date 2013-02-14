@@ -8,6 +8,14 @@
 
 #import "Card.h"
 
+@interface Card()
+
+@end
 @implementation Card
+
+- (int) match:(NSArray *)cards{
+    return 0;
+}
+
 
 @end

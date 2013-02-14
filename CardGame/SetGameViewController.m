@@ -14,10 +14,19 @@
 
 @implementation SetGameViewController
 
+- (void)setup{
+    
+}
+
+- (void)awakeFromNib{
+    [self setup];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self setup];
         // Custom initialization
     }
     return self;
