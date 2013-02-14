@@ -15,7 +15,7 @@
 @interface MatchGame()
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,readwrite) NSUInteger flipCount;
-@property (nonatomic,strong,readwrite)NSMutableArray *resultHistory;
+@property (nonatomic,strong,readwrite)NSString *result;
 @property (nonatomic,strong,readwrite)NSMutableArray *cards;
 @end
 
@@ -34,7 +34,7 @@
         for (int i = 0; i < count; i++) {
             self.cards[i] = [deck drawRandomCard];
         }
-        self.resultHistory = [[NSMutableArray alloc] initWithArray:@[@"Game started!"]];
+        self.result = @"Game started";
         self.flipCount = 0;
     }
     return self;
@@ -69,7 +69,7 @@
                     break;
                 }
             }
-            [self.resultHistory addObject:result];
+            self.result = result;
         }
     }
 }

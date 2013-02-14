@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *FlipCounter;
 @property (weak, nonatomic) IBOutlet UILabel *ScoreCounter;
 @property (weak, nonatomic) IBOutlet UILabel *ResultLabel;
-@property (weak, nonatomic) IBOutlet UISlider *resultHistorySlider;
 @property (nonatomic,strong)MatchGame *game;
 @property (nonatomic,strong)UIAlertView *restartAlart;
 @end
@@ -31,9 +30,7 @@
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = (card.isUnplayable ? 0.6 : 1.0);
     }
-    self.resultHistorySlider.maximumValue = [self.game.resultHistory count] - 1;
-    self.resultHistorySlider.value = self.resultHistorySlider.maximumValue;
-    self.ResultLabel.text = [self.game.resultHistory objectAtIndex:self.resultHistorySlider.maximumValue];
+    self.ResultLabel.text = self.game.result;
     self.ResultLabel.alpha = 1.0;
     self.FlipCounter.text = [[NSString alloc] initWithFormat: @"Flip Count:%d",self.game.flipCount];
     self.ScoreCounter.text = [[NSString alloc]initWithFormat:@"Score:%d",self.game.score];
@@ -71,12 +68,5 @@
     [super viewDidLoad];
     [self newGame];
 }
-
-- (IBAction)viewResultHistory:(id)sender {
-    NSInteger index = floorf((float)self.resultHistorySlider.value);
-    self.ResultLabel.text = [self.game.resultHistory objectAtIndex:index];
-    self.ResultLabel.alpha = (index == [self.game.resultHistory count] -1 ? 1.0 : 0.6);
-}
-
 
 @end

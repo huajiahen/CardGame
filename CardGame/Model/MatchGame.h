@@ -14,7 +14,7 @@
 @property (nonatomic,readonly) NSInteger score;
 @property (nonatomic,readonly) NSUInteger flipCount;
 @property (nonatomic,strong,readonly)NSMutableArray *cards;
-@property (nonatomic,strong,readonly)NSMutableArray *resultHistory;
+@property (nonatomic,strong,readonly)NSString *result;
 
 -(id)initWithCardCount:(NSUInteger)count
              usingDeck:(Deck *)deck;
