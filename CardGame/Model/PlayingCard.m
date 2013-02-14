@@ -64,7 +64,7 @@
             PlayingCard *card = cards[0];
             if ([self.suit isEqualToString:card.suit]) {
                 score = 1;
-            }else if (self.rank = card.rank){
+            }else if (self.rank == card.rank){
                 score = 4;
             }
         }
